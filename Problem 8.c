@@ -1,33 +1,24 @@
 /*Write a program to check the area of the triangle is greater than the perimeter of the triangle.*/
 
-#include<stdio.h>
+#include <stdio.h>
+#include <math.h>
+
 int main()
 {
-
-	double length,breadth,area,perimeter;
-
-
-	printf("Enter the length of the traingle:");
-	scanf("%lf",&length);
-	printf("Enter the breadth of the traingle:");
-	scanf("%lf",&breadth);
-
-	area=length*breadth;
-	perimeter=2*(length+breadth);
-
-
-	if(area>perimeter){
-
-		printf("Area is greatar than perimeter");
-
-	}
+	int a, b, c, P;
+	float A, S;
+	printf("Enter a, b, c three side of a triangle: ");
+	scanf("%d%d%d", &a, &b, &c);
+	P = a + b + c;
+	S = P / 2.0;
+	A = sqrt(S *(S - a) *(S - b) *(S - c));
+	printf("\nArea of the triangle: %.2f\n", A);
+	printf("Perimeter of the triangle: %d\n", P);
+	if (A == P)
+		printf("Area and Perimeter both are equal.\n");
+	else if (A > P)
+		printf("Area is greatar than perimeter.\n");
 	else
-	{
-
-		printf("Perimeter is greater than area");
-
-	}
-
+		printf("Perimeter is greater than area.\n");
 	return 0;
-
 }
